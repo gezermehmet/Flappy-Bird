@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6d15456d485fb6a4ca0cbc961f061dfc
+guid: 74b14dcb54b7a0f47bc978c2622d8afa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4439578073683502312
-    second: "haku\u015F_0"
+      213: -4835445786856061952
+    second: Exit-Button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "haku\u015F_0"
+      name: Exit-Button_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 174
-        height: 161
+        width: 191
+        height: 97
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8e4a4827cbc8c9d30800000000000000
-      internalID: 4439578073683502312
+      spriteID: 00409c71dab05ecb0800000000000000
+      internalID: -4835445786856061952
       vertices: []
       indices: 
       edges: []

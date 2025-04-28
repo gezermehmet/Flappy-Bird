@@ -18,8 +18,7 @@ public class GameManager : MonoBehaviour
     public void UpdateScore()
     {
         _score++;
-        scoreText.text = string.Format("Hakuş Hoplatıldı: {0}", _score);
-        //scoreText.text = "Hakuş Hoplatıldı: " + _score.ToString();
+        scoreText.text = _score.ToString();
 
         if (_score > _highScore)
         {
@@ -31,6 +30,13 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+    }
+
+    public void ReturnMainMenu()
+    {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
 }
