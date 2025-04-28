@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,6 +9,7 @@ public class GameManager : MonoBehaviour
     private int _score, _highScore;
     public Text scoreText;
     public Text highScoreText;
+    public AudioClip clickSound;
 
     void Start()
     {
@@ -33,10 +36,26 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
     }
-
+    
     public void ReturnMainMenu()
     {
+        StartCoroutine(PlaySoundAndLoadScene());
+    }
+
+    private IEnumerator PlaySoundAndLoadScene()
+    {
+        AudioSource.PlayClipAtPoint(clickSound, Vector3.zero);
+        yield return new WaitForSecondsRealtime(0.5f);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
+
+   /* public void ReturnMainMenu()
+    {
+        AudioSource.PlayClipAtPoint(audio.clip, Vector3.zero);
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
-    }
+    }*/
+
+
 }

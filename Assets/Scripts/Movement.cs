@@ -7,10 +7,13 @@ public class Movement : MonoBehaviour
     public GameManager gm;
     public bool isDead;
     public GameObject deathScreen;
+    public AudioSource audioSource;
+    public AudioClip jumpSound, deathSound, hitSound;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -18,6 +21,14 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             rb2d.linearVelocity = Vector2.up * jumpForce;
+
+            if (isDead == false)
+            {
+                audioSource.PlayOneShot(jumpSound);
+            }
+            else
+            {
+            }
         }
     }
 
@@ -33,9 +44,12 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Pipe" || collision.gameObject.tag == "Ground")
         {
+            audioSource.PlayOneShot(hitSound);
+            audioSource.PlayOneShot(deathSound);
             isDead = true;
             Time.timeScale = 0;
-            
+
+
             deathScreen.SetActive(true);
         }
     }
